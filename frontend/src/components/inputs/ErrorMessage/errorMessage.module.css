@@ -1,0 +1,8 @@
+.message{
+  color: var(--red);
+  font-size: 1.4rem;
+  height: 2.2rem;
+}
+.invisible {
+  opacity: 0;
+}

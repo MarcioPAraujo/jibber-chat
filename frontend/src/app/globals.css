@@ -1,13 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --pink: #FF4081;
-  --gray: #EDEDED;
-  --transparent-gray: rgba(240, 240, 255, 0.95);
+  --pink: #ED2590;
+  --soft-pink: #FFB6C1;
+  --text: #2d2d2d;
+  --gray: #D9E6F7;
+  --soft-gray: #BFC9D1;
   --gray-dark: #575151;
+  --transparent-gray: rgba(240, 240, 255, 0.95);
   --yellow: #F8DE22;
   --blue: #03AED2;
-  --red: #D62828;
+  --red: #FF3737;
 }
 
 
@@ -16,6 +19,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
 }
 
 body {

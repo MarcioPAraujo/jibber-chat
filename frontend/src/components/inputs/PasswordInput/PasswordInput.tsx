@@ -1,8 +1,8 @@
-"use client";
-
 import { UseFormRegisterReturn } from "react-hook-form";
-import styles from "./defaultInput.module.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { LuEyeClosed, LuEye } from "react-icons/lu";
+import { useState } from "react";
+import styles from "./passwordInput.module.css";
 
 interface DefaultInputProps {
   id: string;
@@ -15,8 +15,7 @@ interface DefaultInputProps {
   readOnly?: boolean;
   register?: UseFormRegisterReturn;
 }
-
-const DefaultInput: React.FC<DefaultInputProps> = ({
+const PasswordInput: React.FC<DefaultInputProps> = ({
   id,
   placeholder,
   label,
@@ -27,6 +26,7 @@ const DefaultInput: React.FC<DefaultInputProps> = ({
   disabled = false,
   readOnly = false,
 }) => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   return (
     <div className={styles.container}>
       {label && (
@@ -35,9 +35,9 @@ const DefaultInput: React.FC<DefaultInputProps> = ({
         </label>
       )}
       <input
-        className={`${styles.input} ${errorMessage ? styles.error : ""}`}
         id={id}
-        type="text"
+        className={`${styles.input} ${errorMessage ? styles.error : ""}`}
+        type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -45,8 +45,28 @@ const DefaultInput: React.FC<DefaultInputProps> = ({
         readOnly={readOnly}
         {...register}
       />
+      {showPassword && (
+        <button
+          className={styles.eyeButton}
+          type="button"
+          onClick={() => setShowPassword(false)}
+          aria-label="Esconder senha"
+        >
+          <LuEyeClosed />
+        </button>
+      )}
+      {!showPassword && (
+        <button
+          className={styles.eyeButton}
+          type="button"
+          onClick={() => setShowPassword(true)}
+          aria-label="Mostrar senha"
+        >
+          <LuEye />
+        </button>
+      )}
       <ErrorMessage message={errorMessage} />
     </div>
   );
 };
-export default DefaultInput;
+export default PasswordInput;
