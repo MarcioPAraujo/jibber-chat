@@ -1,7 +1,5 @@
+import LoginForm from "@/components/forms/LoginForm/LoginForm";
+
 export default function Home() {
-  return (
-    <div>
-      <h1>akk</h1>
-    </div>
-  );
+  return <LoginForm />;
 }

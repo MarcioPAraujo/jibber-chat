@@ -15,7 +15,7 @@ const LoginLayout = ({ children }: ChildrenProps) => {
           <div className={styles.description}>
             <h1 className={styles.title}>Orkut</h1>
             <p>
-              <strong>Conencta-se</strong> aos seus amigos e fmailiares usando
+              <strong>Conencta-se</strong> aos seus amigos e familiares usando
               recados e mensagens instantâneas
             </p>
             <p>
