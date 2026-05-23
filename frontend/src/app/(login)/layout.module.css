@@ -21,29 +21,29 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 .leftSideContent{
-    height: 100%;
     width: 100%;
     background-color: var(--transparent-gray);
     display: grid;
+    height: 100%;
     place-items: center;
     position: relative;
     overflow: hidden;
 }
 .ring{
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 40rem;
+  height: 40rem;
   background-color: transparent;
-  border: 3.5rem solid white;
+  border: 5rem solid white;
   border-radius: 50%;
 }
 .topRing{
-  top: 1rem;
-  right: -10rem;
+  top: -20rem;
+  right: -20rem;
 }
 .bottomRing{
-  bottom: 1rem;
-  left: -10rem;
+  bottom: -20rem;
+  left: -20rem;
 }
 .title {
   color: var(--pink);

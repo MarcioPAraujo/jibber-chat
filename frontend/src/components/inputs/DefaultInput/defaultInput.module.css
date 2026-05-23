@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.label {
+  font-size: 1.6rem;
+  color: var(--gray-dark);
+}
+.input {
+  font-size: 1.6rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.8rem;
+  height: 4.2rem;
+  width: 100%;
+  padding: 0rem 1rem;
+  color: var(--text);
+
+  outline: none;
+
+  &:focus:not(:read-only) {
+    border-color: var(--soft-pink) ;
+  }
+
+  &::placeholder {
+    color: var(--soft-gray);
+  }
+
+  &:disabled {
+    background-color: var(--transparent-gray);
+    color: var(--soft-gray);
+  }
+}
+.error {
+  border-color: var(--red)
+}
