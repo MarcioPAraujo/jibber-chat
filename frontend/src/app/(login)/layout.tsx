@@ -1,4 +1,6 @@
 "use client";
+
+import { usePathname } from "next/navigation";
 import styles from "./layout.module.css";
 
 interface ChildrenProps {
@@ -6,12 +8,28 @@ interface ChildrenProps {
 }
 
 const LoginLayout = ({ children }: ChildrenProps) => {
+  const pathname = usePathname();
+
+  const topRingClass =
+    pathname === "/cadastro"
+      ? styles.bottomRightRing
+      : pathname === "/esqueci-senha"
+        ? styles.topLeftRing
+        : styles.topRightRing;
+
+  const bottomRingClass =
+    pathname === "/cadastro"
+      ? styles.topLeftRing
+      : pathname === "/esqueci-senha"
+        ? styles.bottomRightRing
+        : styles.bottomLeftRing;
+
   return (
     <div className={styles.pageContainer}>
       <div className={`${styles.side} ${styles.leftSide}`}>
         <div className={styles.leftSideContent}>
-          <div className={`${styles.topRing} ${styles.ring}`} />
-          <div className={`${styles.bottomRing} ${styles.ring}`} />
+          <div className={`${styles.ring} ${topRingClass}`} />
+          <div className={`${styles.ring} ${bottomRingClass}`} />
           <div className={styles.description}>
             <h1 className={styles.title}>Orkut</h1>
             <p>

@@ -21,13 +21,13 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 .leftSideContent{
-    width: 100%;
-    background-color: var(--transparent-gray);
-    display: grid;
-    height: 100%;
-    place-items: center;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  background-color: var(--transparent-gray);
+  display: grid;
+  height: 100%;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
 }
 .ring{
   position: absolute;
@@ -36,15 +36,40 @@
   background-color: transparent;
   border: 5rem solid white;
   border-radius: 50%;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  will-change: transform, opacity;
 }
-.topRing{
-  top: -20rem;
-  right: -20rem;
+
+.topLeftRing,
+.topRightRing {
+  top: 0;
 }
-.bottomRing{
-  bottom: -20rem;
-  left: -20rem;
+.topLeftRing,
+.bottomLeftRing {
+  left: 0;
 }
+.bottomLeftRing,
+.bottomRightRing {
+  bottom: 0;
+}
+.topRightRing,
+.bottomRightRing {
+  right: 0;
+}
+
+.topLeftRing {
+  transform: translate(-35%, -35%);
+}
+.topRightRing {
+  transform: translate(35%, -35%);
+}
+.bottomLeftRing {
+  transform: translate(-35%, 35%);
+}
+.bottomRightRing {
+  transform: translate(35%, 35%);
+}
+
 .title {
   color: var(--pink);
   font-size: 7.2rem;
