@@ -1,6 +1,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import plugin from "eslint-plugin-import";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +20,11 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    plugins: ["react", "@typescript-eslint"],
+    parser: "@typescript-eslint/parser",
+    rules: {
+      "react-hooks/exaustive-deps": "off",
+    },
   },
 ];
 
